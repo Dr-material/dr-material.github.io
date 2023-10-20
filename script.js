@@ -29,13 +29,13 @@ function generatevideoHTML(targetvideos, page) {
               <h2>${video['title']}</h2>
             </div>
             <span class="box">
-              <img src="http://img.youtube.com/vi/${video['href']}/default.jpg">
+              <img src="https://i.ytimg.com/vi/${video['href']}/mqdefault.jpg">
             </span>
           </a>`
     )
     .join('');
 }
-
+// https://i.ytimg.com/vi/uz6G4yiqLT0/mqdefault.jpg
 function rendervideos(targetHTML) {
   const videoList = document.querySelector('[data-videos]');
   videoList.innerHTML = targetHTML;
