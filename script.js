@@ -1,5 +1,5 @@
 const videos = [];
-fetch('https://raw.githubusercontent.com/Dr-XYZ/material/main/index.csv')
+fetch('videos.csv')
   .then((response) => response.text())
   .then((csv) => {
     const rows = csv.trim().split('\n');
