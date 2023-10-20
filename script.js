@@ -24,12 +24,12 @@ function generatevideoHTML(targetvideos, page) {
   return pagevideos
     .map(
       (video) =>
-        `<a href="${video['連結']}" class="container" target="_blank">
+        `<a href="https://www.youtube.com/watch?v=${video['href']}" class="container" target="_blank">
             <div class="text">
-              <h2>${video['標題']}</h2>
+              <h2>${video['title']}</h2>
             </div>
             <span class="box">
-              <img src="http://img.youtube.com/vi/${video['圖片']}/default.jpg">
+              <img src="http://img.youtube.com/vi/${video['href']}/default.jpg">
             </span>
           </a>`
     )
