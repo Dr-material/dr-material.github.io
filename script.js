@@ -42,14 +42,27 @@ fetch('videos.csv')
     }).join('');
   }
   
+
+
   // 新增下載函式
   function download(event) {
     event.preventDefault(); 
     var filename = event.target.getAttribute('data-filename');
     const path = filename[1]+filename[2]+filename[3]+filename[4]
-    filename = encodeURIComponent(filename)
-    console.log(path)
-    window.open(`https://github.com/Dr-material/material/raw/main/${path}/${filename}`)
+    const encodefilename = encodeURIComponent(filename)
+    var downloadLink = document.createElement('a');
+    downloadLink.href = `https://github.com/Dr-material/material/raw/main/${path}/${encodefilename}`; // 替換為實際的檔案路徑
+    downloadLink.download = filename; // 替換為實際的檔案名稱
+
+    // 將虛擬的下載鏈接加入到文檔中
+    document.body.appendChild(downloadLink);
+
+    // 模擬點擊下載鏈接
+    downloadLink.click();
+
+    // 刪除虛擬的下載鏈接
+    document.body.removeChild(downloadLink);
+
   }
 function rendervideos(targetHTML) {
   const videoList = document.querySelector('[data-videos]');
