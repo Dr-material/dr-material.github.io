@@ -22,7 +22,7 @@ fetch('videos.csv')
     const pagevideos = targetvideos.slice(startIndex, endIndex);
   
     return pagevideos.map((video) => {
-      const isSoundMaterial = video['title'].startsWith('#音效素材');
+      const isSoundMaterial = video['title'].startsWith('#音效素材') || video['title'].startsWith('#BGM素材');
       var filename = isSoundMaterial ? 'mp3' : 'mp4';
       return `
         <a href="https://www.youtube.com/watch?v=${video['href']}" class="container" target="_blank">
