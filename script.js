@@ -52,7 +52,8 @@ fetch('videos.csv')
     const encodefilename = encodeURIComponent(filename)
     var downloadLink = document.createElement('a');
     downloadLink.href = `https://github.com/Dr-material/material/raw/main/${path}/${encodefilename}`; // 替換為實際的檔案路徑
-    downloadLink.download = filename; // 替換為實際的檔案名稱
+    downloadLink.download = filename.slice(5); // 替換為實際的檔案名稱
+
 
     // 將虛擬的下載鏈接加入到文檔中
     document.body.appendChild(downloadLink);
